@@ -1,0 +1,76 @@
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-content: center;
+  padding: 0.5rem;
+}
+
+img {
+  grid-area: picture;
+  width: 90%;
+  align-self: center;
+}
+
+h4 {
+  grid-area: title;
+  font-family: var(--fonts);
+  font-size: 2.7rem;
+  padding: 0;
+  margin: 0;
+  color: var(--productinfo-clr);
+}
+
+h5 {
+  grid-area: price;
+  font-family: var(--fonts);
+  text-align: left;
+  margin: 0;
+  padding: 0.2rem;
+  font-size: 1.5rem;
+  color: var(--productinfo-clr);
+}
+
+p {
+  grid-area: description;
+  font-family: var(--fonts);
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0.4rem;
+  color: var(--productinfo-clr);
+}
+
+@media screen and (min-width: 1200px) {
+  img {
+    width: 35%;
+    margin: 0;
+    padding: 0;
+  }
+  h4 {
+    font-size: 3rem;
+  }
+  h5 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+  section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, -webkit-min-content);
+    grid-template-rows: repeat(3, min-content);
+    grid-template-areas: "picture title" "picture price" "picture description";
+  }
+}
+@media screen and (prefers-color-scheme: dark) {
+  h5 {
+    color: var(--title-color);
+  }
+  h4 {
+    color: var(--title-color);
+  }
+  p {
+    color: var(--title-color);
+  }
+}/*# sourceMappingURL=productsite.css.map */

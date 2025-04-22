@@ -1,0 +1,49 @@
+video {
+  grid-area: video;
+  width: 100%;
+}
+
+main {
+  padding: 0.25rem;
+}
+
+#Linkbutton {
+  grid-area: Shopbutton;
+  display: block;
+  width: 100%;
+  height: 6rem;
+  color: var(--title-color);
+  background-color: var(--footer-bg);
+  border-radius: calc(3 * var(--radius));
+  font-size: 2.2rem;
+  text-align: center;
+  align-content: center;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 1200px) {
+  video {
+    width: 100%;
+  }
+  section {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "video Shopbutton";
+  }
+  #Linkbutton {
+    width: 70%;
+    height: 15rem;
+    font-size: 3.5rem;
+    justify-self: center;
+    align-self: center;
+  }
+  #Linkbutton:hover {
+    background-color: var(--hover-effect);
+  }
+}
+@media screen and (prefers-color-scheme: dark) {
+  #Linkbutton {
+    background-color: var(--backgroundclr-darkmode);
+  }
+}/*# sourceMappingURL=index.css.map */
