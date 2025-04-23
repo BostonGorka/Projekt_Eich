@@ -4,6 +4,8 @@
 
 body{
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 h1{
@@ -17,20 +19,26 @@ h1{
 
 main{
     flex-grow: 1;
+    padding: 1rem;
 }
 
 header{
     background-color: var(--backgroundclr);
+    margin: 0;
+    padding: 0;
 }
 
 footer{
     background-color: var(--backgroundclr);
     margin: 0;
     padding: 0;
+    
 }
 
 .trademark{
     text-align: left;
     font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
 }
 
