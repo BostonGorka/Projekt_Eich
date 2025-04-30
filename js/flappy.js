@@ -35,6 +35,8 @@ pipeArray.push({
 let pipeHeight = Math.random() * 500;
 let pipeWidth = 55;
 
+let pixelsPassed = 0;
+
 
 let birdWidth = 45;
 let birdHeight = 40;
@@ -70,8 +72,26 @@ update();
 
 function update() {
     requestAnimationFrame(update);
-    //context.clearRect(0, 0, boardWidth, boardHeight);
+
+    pixelsPassed++;
+
+    if (pixelsPassed === 100) {
+        pipeArray.push({
+            x: 390,
+            y: pipeY,
+            width: 55,
+            height: Math.random() * 130 + 135
+        });
+        pixelsPassed = 0;
+    }
+
+    context.clearRect(0, 0, boardWidth, boardHeight);
     for (let i = 0; i < pipeArray.length; i++) {
+
+        pipeArray[i].x--;
+
+
+
 
         context.fillStyle = "rgb(31, 68, 8)";
         context.fillRect(pipeArray[i].x, pipeArray[i].y, pipeArray[i].width, pipeArray[i].height);
@@ -86,9 +106,6 @@ function Clickbird(event) {
 
 }
 
-function placePipes() {
-
-}
 
 
 
