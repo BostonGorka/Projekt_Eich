@@ -1,6 +1,6 @@
 let birdClick = document.getElementById('board');
 
-birdClick.addEventListener('click', Clickbird);
+window.addEventListener('keydown', Clickbird);
 
 let board;
 let context;
@@ -11,22 +11,24 @@ let pipeY = 0;
 
 const pipeArray = [];
 
+let velocityY = 0;
+
 pipeArray.push({
-    x: 230,
+    x: 600,
     y: pipeY,
     width: 55,
     height: 135
 });
 
 pipeArray.push({
-    x: pipeX,
+    x: 200,
     y: pipeY,
     width: 55,
     height: 250
 });
 
 pipeArray.push({
-    x: 320,
+    x: 400,
     y: pipeY,
     width: 55,
     height: 265
@@ -64,10 +66,6 @@ let bird = {
     height: birdHeight
 }
 
-
-context.fillStyle = "rgb(245, 148, 34)";
-context.fillRect(bird.x, bird.y, bird.width, bird.height);
-
 update();
 
 function update() {
@@ -85,6 +83,11 @@ function update() {
         pixelsPassed = 0;
     }
 
+    velocityY = velocityY - 0.15;
+    birdY = birdY - velocityY;
+
+    
+    
     context.clearRect(0, 0, boardWidth, boardHeight);
     for (let i = 0; i < pipeArray.length; i++) {
 
@@ -100,9 +103,17 @@ function update() {
         context.fillRect(pipeArray[i].x, pipeArray[i].y + pipeArray[i].height + 155, pipeArray[i].width, pipeArray[i].height + 500);
     }
 
+    context.fillStyle = "rgb(245, 148, 34)";
+    context.fillRect(birdX, birdY, bird.width, bird.height);
+
+    console.log(birdX, birdY, bird.width, bird.height);
+
 }
 
 function Clickbird(event) {
+    if (event.code == 'Space') {
+        velocityY = 4.25;
+    }
 
 }
 
