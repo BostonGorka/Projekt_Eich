@@ -13,26 +13,6 @@ const pipeArray = [];
 
 let velocityY = 0;
 
-pipeArray.push({
-    x: 600,
-    y: pipeY,
-    width: 55,
-    height: 135
-});
-
-pipeArray.push({
-    x: 200,
-    y: pipeY,
-    width: 55,
-    height: 250
-});
-
-pipeArray.push({
-    x: 400,
-    y: pipeY,
-    width: 55,
-    height: 265
-});
 
 let pipeHeight = Math.random() * 500;
 let pipeWidth = 55;
@@ -58,7 +38,6 @@ let pipes = {
 }
 
 
-
 let bird = {
     x: birdX,
     y: birdY,
@@ -67,13 +46,14 @@ let bird = {
 }
 
 update();
+Deathbird();
 
 function update() {
     requestAnimationFrame(update);
 
     pixelsPassed++;
 
-    if (pixelsPassed === 100) {
+    if (pixelsPassed === 200) {
         pipeArray.push({
             x: 390,
             y: pipeY,
@@ -86,15 +66,12 @@ function update() {
     velocityY = velocityY - 0.15;
     birdY = birdY - velocityY;
 
-    
-    
+
+
     context.clearRect(0, 0, boardWidth, boardHeight);
     for (let i = 0; i < pipeArray.length; i++) {
 
-        pipeArray[i].x--;
-
-
-
+        pipeArray[i].x = pipeArray[i].x - 2;
 
         context.fillStyle = "rgb(31, 68, 8)";
         context.fillRect(pipeArray[i].x, pipeArray[i].y, pipeArray[i].width, pipeArray[i].height);
@@ -117,6 +94,9 @@ function Clickbird(event) {
 
 }
 
+function Deathbird(){
+    
+}
 
 
 
