@@ -1,5 +1,6 @@
 :root{
     --backgroundclr: rgb(224, 224, 224);
+    --a-tagcolour: black;
 }
 
 body{
@@ -32,6 +33,15 @@ footer{
     background-color: var(--backgroundclr);
     margin: 0;
     padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: var(--a-tagcolour);
+}
+
+section{
+    background-color: var(--backgroundclr);
     
 }
 
