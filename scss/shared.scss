@@ -1,6 +1,8 @@
 :root{
     --backgroundclr: rgb(224, 224, 224);
     --a-tagcolour: black;
+    --fontfamilies: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    --p-text-size: 2.5rem;
 }
 
 body{
@@ -10,7 +12,7 @@ body{
 }
 
 h1{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: var(--fontfamilies);
     font-size: 4rem;
     text-align: center;
     padding: 0;
@@ -50,5 +52,9 @@ section{
     font-size: 1.5rem;
     margin: 0;
     padding: 0;
+}
+
+@media screen and (min-width: 700px) {
+    
 }
 

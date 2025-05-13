@@ -94,9 +94,7 @@ function Clickbird(event) {
 
 }
 
-function Deathbird(){
-    
-}
+
 
 
 
