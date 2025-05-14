@@ -2,6 +2,7 @@ let birdClick = document.getElementById('board');
 
 window.addEventListener('keydown', Clickbird);
 
+//board
 let board;
 let context;
 let boardWidth = 390;
@@ -19,7 +20,7 @@ let pipeWidth = 55;
 
 let pixelsPassed = 0;
 
-
+//fågeln
 let birdWidth = 45;
 let birdHeight = 40;
 let birdX = boardWidth / 8;
@@ -37,7 +38,6 @@ let pipes = {
     height: pipeHeight
 }
 
-
 let bird = {
     x: birdX,
     y: birdY,
@@ -46,13 +46,13 @@ let bird = {
 }
 
 update();
-Deathbird();
 
 function update() {
     requestAnimationFrame(update);
 
     pixelsPassed++;
 
+    //placerar ut rören
     if (pixelsPassed === 200) {
         pipeArray.push({
             x: 390,
@@ -73,13 +73,15 @@ function update() {
 
         pipeArray[i].x = pipeArray[i].x - 2;
 
+        //ritar upp rören
         context.fillStyle = "rgb(31, 68, 8)";
         context.fillRect(pipeArray[i].x, pipeArray[i].y, pipeArray[i].width, pipeArray[i].height);
 
         context.fillStyle = "rgb(31, 68, 8)";
         context.fillRect(pipeArray[i].x, pipeArray[i].y + pipeArray[i].height + 155, pipeArray[i].width, pipeArray[i].height + 500);
     }
-
+    
+    //ritar upp fågeln
     context.fillStyle = "rgb(245, 148, 34)";
     context.fillRect(birdX, birdY, bird.width, bird.height);
 
@@ -87,6 +89,7 @@ function update() {
 
 }
 
+//fågelns hopp
 function Clickbird(event) {
     if (event.code == 'Space') {
         velocityY = 4.25;

@@ -2,7 +2,7 @@
   --backgroundclr: rgb(224, 224, 224);
   --a-tagcolour: black;
   --fontfamilies: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  --p-text-size: 2.5rem;
+  --p-font-size: 2.5rem;
 }
 
 body {
