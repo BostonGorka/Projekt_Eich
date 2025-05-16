@@ -1,9 +1,10 @@
-let birdClick = document.getElementById('board');
+let birdClick;
+birdClick = document.getElementById('board');
 
 window.addEventListener('keydown', Clickbird);
 
 //board
-let board;
+board;
 let context;
 let boardWidth = 390;
 let boardHeight = 650;
@@ -36,14 +37,14 @@ let pipes = {
     y: pipeY,
     width: pipeWidth,
     height: pipeHeight
-}
+};
 
 let bird = {
     x: birdX,
     y: birdY,
     width: birdWidth,
     height: birdHeight
-}
+};
 
 update();
 
@@ -53,7 +54,7 @@ function update() {
     pixelsPassed++;
 
     //placerar ut rören
-    if (pixelsPassed === 200) {
+    if (pixelsPassed === 125) {
         pipeArray.push({
             x: 390,
             y: pipeY,
